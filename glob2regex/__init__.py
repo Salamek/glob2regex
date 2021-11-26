@@ -1,5 +1,6 @@
 def glob2regex(glob: str, extended: bool = False, glob_star: bool = False, flags: str = '') -> str:
     glob_list = list(glob)
+    glob_list_len = len(glob_list)
 
     # The regexp we are building, as a string.
     regex_str = ''
@@ -52,11 +53,11 @@ def glob2regex(glob: str, extended: bool = False, glob_star: bool = False, flags
             prev_char = glob_list[i - 1]
             start_count = 1
 
-            while (i - 1) <= len(glob_list) and glob_list[i - 1] == '*':
+            while (i - 1) < glob_list_len and glob_list[i - 1] == '*':
                 start_count += 1
                 i += 1
 
-            next_char = glob_list[i + 1] if (i + 1) <= len(glob_list) else None
+            next_char = glob_list[i + 1] if (i + 1) < glob_list_len else None
 
             if not glob_star:
                 # glob_star is disabled, so treat any number of '*' as one
