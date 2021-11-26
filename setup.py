@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='glob2regex',
-    version='0.0.2',
+    version='0.0.3',
     packages=find_packages(exclude=['tests', 'tests.*']),
     package_data={'glob2regex': ['py.typed']},
     install_requires=[],
