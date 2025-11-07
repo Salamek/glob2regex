@@ -1,6 +1,6 @@
 """glob2regex main file."""
 
-__version__ = "0.0.5"
+__version__ = "0.1.0"
 
 def glob2regex(glob: str, *, extended: bool = False, glob_star: bool = False, flags: str = "") -> str:
     r"""Glob to regex function.
